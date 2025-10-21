@@ -28,21 +28,27 @@ const Education = () => {
   ];
 
   const languages = [
-    { name: "English", level: "Full Professional Proficiency", percentage: 90 },
+    { name: "English", level: "Full Professional Proficiency", percentage: 85 },
     { name: "Urdu", level: "Native or Bilingual Proficiency", percentage: 100 },
   ];
 
-  const interests = [
-    "Coding",
-    "Debugging",
-    "Optimization",
-    "Testing",
-    "Learning",
-    "Innovation",
-    "Collaboration",
-    "Problem-solving",
-    "Teamwork",
-  ];
+    const interests = [
+        "Coding",
+        "Debugging",
+        "Optimization",
+        "Testing",
+        "Learning",
+        "Innovation",
+        "Collaboration",
+        "Problem-solving",
+        "Teamwork",
+        "Open Source Contribution",
+        "System Architecture",
+        "Project Management",
+        "Continuous Improvement",
+        "Exploring New Frameworks",
+        "Reading Tech Articles",
+    ];
 
   return (
     <section id="education" className="py-20 bg-card">

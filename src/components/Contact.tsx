@@ -27,8 +27,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "afaqkalwarapl@gmail.com",
-      href: "mailto:afaqkalwarapl@gmail.com",
+      value: "m.afaq.dev@gmail.com",
+      href: "mailto:m.afaq.dev@gmail.com",
     },
     {
       icon: Phone,
@@ -53,7 +53,7 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/jam-afaq",
     },
   ];
 

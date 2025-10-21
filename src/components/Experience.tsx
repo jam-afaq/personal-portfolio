@@ -1,10 +1,10 @@
-import { Briefcase, Calendar } from "lucide-react";
+import {Briefcase, Calendar, MapPin} from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "PHP Laravel Developer",
+      title: "Full Stack Developer",
       company: "Blue Horn Technologies",
       location: "Lahore, Pakistan",
       period: "Aug 2025 - Present",
@@ -88,9 +88,17 @@ const Experience = () => {
                     <span>{exp.company}</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                  <Calendar className="h-4 w-4" />
-                  <span>{exp.period}</span>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div className="flex-1">
+                        <div className="flex items-center gap-2 text-foreground font-medium mb-2">
+                            <Calendar className="h-4 w-4" />
+                            <span>{exp.period}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-primary font-medium mb-2">
+                            <MapPin className="h-4 w-4" />
+                            <span>{exp.location}</span>
+                        </div>
+                    </div>
                 </div>
               </div>
 
