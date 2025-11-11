@@ -26,38 +26,22 @@ It’s built with modern tools and frameworks to reflect my style, technical exp
 - 🔒 Deployed and version-controlled using Git
 
 ---
-
-## 🌐 Live Demo
-
-👉 [View Portfolio](https://your-live-link.com)  
-*(Replace this link once your site is deployed)*
-
----
-
-## 🖼️ Preview
-
-![Portfolio Preview](./preview.png)  
-*(Optional — add a screenshot of your homepage here)*
-
----
-
 ## 🧰 Local Setup
 
 To run this project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/afaq-portfolio.git
+git clone https://github.com/jam-afaq/afaq-portfolio.git
 
 # Move into the project folder
 cd afaq-portfolio
 
 # Install dependencies
-npm install && composer install
+npm install
 
 # Run local servers
 npm run dev
-php artisan serve
 ```
 
 ---
@@ -66,20 +50,6 @@ php artisan serve
 
 Hi, I'm **Afaq** — a passionate **Laravel and React Developer** who loves building elegant, user-friendly web applications.  
 I focus on creating scalable solutions with clean code and great design.
-
----
-
-## 📫 Contact
-
-- 📧 **Email:** yourname@email.com  
-- 💼 **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-- 🐙 **GitHub:** [github.com/yourusername](https://github.com/yourusername)
-
----
-
-## 🧾 License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
