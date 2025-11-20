@@ -25,49 +25,49 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: "Job Portal System",
+      title: "School Management System",
       description:
-        "A comprehensive Laravel-based job portal connecting employers and job seekers with advanced features including job listings, resume uploads, application tracking, and role-based dashboards.",
+        "Comprehensive school administration platform for managing students, teachers, classes, attendance, and academic records with real-time updates and reporting.",
       longDescription:
-        "A full-featured job portal built with Laravel that streamlines the hiring process. Employers can post jobs, review applications, and manage candidates, while job seekers can create profiles, upload resumes, and track their applications in real-time.",
+        "A complete school management solution that streamlines academic and administrative operations. Manage student enrollments, teacher assignments, class schedules, and generate detailed reports. Features role-based access control and real-time notifications.\n\nDemo Login Credentials:\n- Email: admin@admin.com\n- Password: 12345678",
       features: [
-        "Advanced job search with filters and recommendations",
-        "Resume builder and parser",
-        "Application tracking system",
-        "Real-time notifications",
-        "Role-based dashboards for employers and job seekers",
-        "Secure authentication and authorization"
+        "Student and staff management",
+        "Class and subject management",
+        "Attendance tracking",
+        "Gradebook and report cards",
+        "Timetable management",
+        "Fee collection and receipts"
       ],
-      image: "/placeholder.svg",
-      tech: ["Laravel", "PHP", "MySQL", "Eloquent ORM", "RESTful APIs", "Authentication"],
+      image: "/images/projects/school-management-system.png",
+      tech: ["Laravel", "PHP", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
       github: "#",
-      demo: "#",
+      demo: "https://school-management-system.digitalrozgars.com/",
     },
     {
-      title: "Service Providing Web App",
+      title: "Digital Rozgars - Client Site",
       description:
-        "Full-stack Laravel application connecting service providers with customers, featuring user authentication, service listings, booking management, and real-time notifications.",
+        "Professional website for Digital Rozgars, showcasing their services, portfolio, and client solutions with a modern and responsive design.",
       longDescription:
-        "A marketplace platform that connects service providers with customers. Features include service discovery, booking management, payment processing, and real-time communication between providers and customers.",
+        "A professional business website built to represent Digital Rozgars' brand and services. Features service showcases, portfolio display, client testimonials, and contact forms. The site is built with modern web technologies for optimal performance and user experience.",
       features: [
-        "Service provider profiles and portfolios",
-        "Advanced booking system with calendar integration",
-        "Payment gateway integration",
-        "Rating and review system",
-        "Real-time chat and notifications",
-        "Admin dashboard for platform management"
+        "Responsive and modern UI/UX design",
+        "Service and portfolio showcase",
+        "Client testimonials section",
+        "Contact and inquiry forms",
+        "SEO optimized pages",
+        "Fast loading performance"
       ],
-      image: "/placeholder.svg",
-      tech: ["Laravel", "PHP", "MySQL", "RESTful APIs", "Real-time Notifications"],
+      image: "/images/projects/digital-rozgars.png",
+      tech: ["Laravel", "PHP", "MySQL", "Bootstrap 5", "JavaScript", "jQuery"],
       github: "#",
-      demo: "#",
+      demo: "http://digitalrozgars.com/",
     },
     {
       title: "Hostel Management System",
       description:
         "Comprehensive system for managing hostel operations including room bookings, tenant tracking, payment processing, and admin dashboards with real-time updates.",
       longDescription:
-        "An all-in-one hostel management solution that digitizes operations. Manage rooms, tenants, payments, and maintenance requests with ease. Features real-time occupancy tracking and automated billing.",
+        "An all-in-one hostel management solution that digitizes operations. Manage rooms, tenants, payments, and maintenance requests with ease. Features real-time occupancy tracking and automated billing.\n\nDemo Login Credentials:\n- Email: test@admin.com\n- Password: 12345678",
       features: [
         "Room allocation and availability tracking",
         "Tenant management with digital records",
@@ -76,29 +76,29 @@ const Projects = () => {
         "Occupancy analytics and reporting",
         "Multi-user access with role permissions"
       ],
-      image: "/placeholder.svg",
+      image: "/images/projects/hostel-management-system.png",
       tech: ["TypeScript", "Node.js", "Express", "MySQL", "Real-time Updates"],
       github: "#",
-      demo: "#",
+      demo: "https://hostel-management-system.digitalrozgars.com/",
     },
     {
-      title: "Voicera Project",
+      title: "Uni Guide Consultant CRM",
       description:
-        "AI-powered application integrating voice models for transcription and analysis, featuring real-time AI processing, user authentication, and data visualization dashboards.",
+        "A comprehensive CRM system for educational consultants to manage student applications, university partnerships, and communication workflows.",
       longDescription:
-        "An innovative AI-powered platform that leverages voice recognition and natural language processing. Provides accurate transcription, sentiment analysis, and actionable insights from audio data.",
+        "A full-featured CRM solution built for educational consultants to streamline student application processes, manage university partnerships, and track communications. Features include application tracking, document management, email integration, and reporting dashboards.\n\nDemo Login Credentials:\n- Email: admin@example.com\n- Password: password",
       features: [
-        "Real-time voice transcription with high accuracy",
-        "AI-powered sentiment and emotion analysis",
-        "Multi-language support",
-        "Interactive data visualization dashboards",
-        "Export and sharing capabilities",
-        "API integration for third-party applications"
+        "Student application management",
+        "University and course database",
+        "Document upload and management",
+        "Email and communication tracking",
+        "Application status tracking",
+        "Analytics and reporting dashboard"
       ],
-      image: "/placeholder.svg",
-      tech: ["Laravel", "Inertia.js", "React", "AI Integration", "Data Visualization"],
+      image: "/images/projects/crm-uni-guide.png",
+      tech: ["Laravel", "React", "TypeScript", "MySQL", "Inertia.js", "Tailwind CSS"],
       github: "#",
-      demo: "#",
+      demo: "https://crm-uniguide.testcamp.uk/",
     },
   ];
 
@@ -179,27 +179,6 @@ const Projects = () => {
                         >
                           <Button
                             size="sm"
-                            variant="secondary"
-                            className="shadow-smooth"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              window.open(project.github, '_blank');
-                            }}
-                          >
-                            <Github className="h-4 w-4 mr-2" />
-                            Code
-                          </Button>
-                        </motion.div>
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{
-                            y: hoveredIndex === index ? 0 : 20,
-                            opacity: hoveredIndex === index ? 1 : 0
-                          }}
-                          transition={{ delay: 0.15 }}
-                        >
-                          <Button
-                            size="sm"
                             className="gradient-primary shadow-glow"
                             onClick={(e) => {
                               e.stopPropagation();
@@ -261,6 +240,12 @@ const Projects = () => {
                 </Card>
               </motion.div>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground">
+              Additional projects and case studies available upon request. Let's discuss how I can help with your next project.
+            </p>
           </div>
         </div>
       </section>
