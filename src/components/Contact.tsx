@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,27 +8,55 @@ import { useState } from "react";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://digitalrozgars.com/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+      console.error("Contact form error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "m.afaq.dev@gmail.com",
-      href: "mailto:m.afaq.dev@gmail.com",
+      value: "afaqkalwarapl@gmail.com",
+      href: "#",
     },
     {
       icon: Phone,
@@ -142,6 +170,7 @@ const Contact = () => {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -161,6 +190,7 @@ const Contact = () => {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -180,15 +210,26 @@ const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
               <Button
                 type="submit"
                 className="w-full gradient-primary shadow-glow hover:scale-105 transition-bounce group"
+                disabled={isSubmitting}
               >
-                Send Message
-                <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
+                {isSubmitting ? (
+                  <>
+                    Sending...
+                    <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
+                  </>
+                )}
               </Button>
             </form>
           </Card>
